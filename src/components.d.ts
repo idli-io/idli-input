@@ -19,6 +19,7 @@ export namespace Components {
     * The input field label.
     */
     'label': string;
+    'placeholder': string;
     /**
     * The button size. Possible values are: `"sm"`, `"md"`, `"lg"`. Defaults to `"md"`.
     */
@@ -27,6 +28,7 @@ export namespace Components {
     * Button variants Possible values are `"text"`, `"email"`. Defaults to `"text"`.
     */
     'type': 'text' | 'email';
+    'value': string;
   }
 }
 
@@ -53,6 +55,8 @@ declare namespace LocalJSX {
     * The input field label.
     */
     'label'?: string;
+    'onOnInput'?: (event: CustomEvent<any>) => void;
+    'placeholder'?: string;
     /**
     * The button size. Possible values are: `"sm"`, `"md"`, `"lg"`. Defaults to `"md"`.
     */
@@ -61,6 +65,7 @@ declare namespace LocalJSX {
     * Button variants Possible values are `"text"`, `"email"`. Defaults to `"text"`.
     */
     'type'?: 'text' | 'email';
+    'value'?: string;
   }
 
   interface IntrinsicElements {

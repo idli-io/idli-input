@@ -1,4 +1,4 @@
-import {Component, Prop, h} from '@stencil/core';
+import {Component, Prop, h, EventEmitter, Event} from '@stencil/core';
 
 @Component({
     tag: 'idli-input',
@@ -10,6 +10,10 @@ export class IdliInput {
      * The input field label.
      */
     @Prop() label: string;
+
+    @Prop() placeholder: string;
+
+    @Prop() value: string;
 
     /**
      * The button size.
@@ -27,6 +31,8 @@ export class IdliInput {
      * If true, the user cannot interact with the button. Defaults to `false`.
      */
     @Prop() disabled: boolean = false;
+
+    @Event() onInput: EventEmitter;
 
     getSizeClass() {
         let size = "size-";
@@ -46,12 +52,21 @@ export class IdliInput {
         return type;
     }
 
+    handleChange(event: any) {
+        this.onInput.emit(event);
+    }
+
     render() {
-        return <input
-            class={"idli-input-component " + this.getSizeClass() + " "+ this.getTypeClass()}
-            type={this.type} placeholder="Basic usage"
-            disabled={this.disabled}>
-            <slot/>
-        </input>;
+        return <div class="idli-input-component">
+            <label>{this.label}</label>
+            <input
+                class={"idli-input-element " + this.getSizeClass() + " " + this.getTypeClass()}
+                type={this.type}
+                placeholder={this.placeholder}
+                value={this.value}
+                onInput={(event) => this.handleChange(event)}
+                disabled={this.disabled}>
+            </input>
+        </div>;
     }
 }

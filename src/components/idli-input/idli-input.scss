@@ -38,6 +38,10 @@ $font: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'PingFang SC', 'Hiragi
 }
 
 .idli-input-component {
+  font-family: $font;
+}
+
+.idli-input-element {
   box-sizing: border-box;
   padding: 4px 11px;
   min-width: 0;
