@@ -23,8 +23,8 @@
 ```
 <custom-element-demo>
   <template>
-    <script src='https://unpkg.com/@idli/idli-input@0.5.0/dist/idli-input.js'></script>
-    <idli-input size="lg" variant="primary">Click me</idli-input>
+    <script src='https://unpkg.com/@idli/idli-input@0.1.5/dist/idli-input.js'></script>
+    <idli-input size="sm" label="Name" placeholder="John Snow" value=""></idli-input>
   </template>
 </custom-element-demo>
 ```
@@ -36,15 +36,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
-  <script src='https://unpkg.com/@idli/idli-input@0.5.0/dist/idli-input.js'></script>
+  <script src='https://unpkg.com/@idli/idli-input@0.1.5/dist/idli-input.js'></script>
 </head>
 <body>
-  <idli-input size="lg" variant="primary">Click me</idli-input>
+  <idli-input size="sm" label="Name" placeholder="John Snow" value=""></idli-input>
 </body>
 </html>
 ```
 
 #### Screenshot:
 ![Screenshot](screenshot.png?raw=true "Screenshot")
-
-[Demo](https://jsbin.com/kirumuc/edit?html,output)
