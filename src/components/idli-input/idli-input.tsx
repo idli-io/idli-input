@@ -11,8 +11,14 @@ export class IdliInput {
      */
     @Prop() label: string;
 
+    /**
+     * The input field placeholder.
+     */
     @Prop() placeholder: string;
 
+    /**
+     * The input field value.
+     */
     @Prop() value: string;
 
     /**
@@ -32,7 +38,7 @@ export class IdliInput {
      */
     @Prop() disabled: boolean = false;
 
-    @Event() onInput: EventEmitter;
+    @Event() inputChanged: EventEmitter;
 
     getSizeClass() {
         let size = "size-";
@@ -53,7 +59,8 @@ export class IdliInput {
     }
 
     handleChange(event: any) {
-        this.onInput.emit(event);
+        this.value = event.target.value;
+        this.inputChanged.emit(event);
     }
 
     render() {

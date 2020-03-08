@@ -7,12 +7,21 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                              | Type                                                       | Default     |
-| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ----------- |
-| `block`    | `block`    | If true, fits button width to its parent width. Defaults to `false`.                                                     | `boolean`                                                  | `false`     |
-| `disabled` | `disabled` | If true, the user cannot interact with the button. Defaults to `false`.                                                  | `boolean`                                                  | `false`     |
-| `size`     | `size`     | The button size. Possible values are: `"sm"`, `"md"`, `"lg"`. Defaults to `"md"`.                                        | `"lg" \| "md" \| "sm"`                                     | `'md'`      |
-| `variant`  | `variant`  | Button variants Possible values are `"default"`, `"primary"`, `"dashed"`, `"danger"`, `"link"`. Defaults to `"default"`. | `"danger" \| "dashed" \| "default" \| "link" \| "primary"` | `'default'` |
+| Property      | Attribute     | Description                                                                       | Type                   | Default     |
+| ------------- | ------------- | --------------------------------------------------------------------------------- | ---------------------- | ----------- |
+| `disabled`    | `disabled`    | If true, the user cannot interact with the button. Defaults to `false`.           | `boolean`              | `false`     |
+| `label`       | `label`       | The input field label.                                                            | `string`               | `undefined` |
+| `placeholder` | `placeholder` | The input field placeholder.                                                      | `string`               | `undefined` |
+| `size`        | `size`        | The button size. Possible values are: `"sm"`, `"md"`, `"lg"`. Defaults to `"md"`. | `"lg" \| "md" \| "sm"` | `'md'`      |
+| `type`        | `type`        | Button variants Possible values are `"text"`, `"email"`. Defaults to `"text"`.    | `"email" \| "text"`    | `'text'`    |
+| `value`       | `value`       | The input field value.                                                            | `string`               | `undefined` |
+
+
+## Events
+
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `inputChanged` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------
