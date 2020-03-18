@@ -1,6 +1,6 @@
 {
   "name": "@idli/idli-input",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Idli Input",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -21,19 +21,27 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
+  "keywords": [
+    "idli",
+    "idli input",
+    "web component",
+    "input component"
+  ],
   "devDependencies": {
     "@stencil/core": "^1.3.3",
-    "@stencil/sass": "^1.1.1"
+    "@stencil/sass": "^1.1.1",
+    "@idli/theme": "^1.0.2"
   },
-  "license": "MIT",
   "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/idli-io/idli-input.git"
   },
-  "author": "",
+  "author": "Shivaji Varma <contact@shivajivarma.com>",
+  "contributors": [],
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/idli-io/idli-input/issues"
   },
-  "homepage": "https://github.com/idli-io/idli-input#readme"
+  "homepage": "https://idli.io/input.html"
 }

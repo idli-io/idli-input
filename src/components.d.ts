@@ -16,6 +16,10 @@ export namespace Components {
     */
     'disabled': boolean;
     /**
+    * If true, the form will be in inline format. Defaults to `false`.
+    */
+    'inline': boolean;
+    /**
     * The input field label.
     */
     'label': string;
@@ -28,13 +32,17 @@ export namespace Components {
     */
     'size': 'sm' | 'md' | 'lg';
     /**
-    * Button variants Possible values are `"text"`, `"email"`. Defaults to `"text"`.
+    * Button variants Possible values are `"text"`. Defaults to `"text"`.
     */
-    'type': 'text' | 'email';
+    'type': 'text';
     /**
     * The input field value.
     */
     'value': string;
+    /**
+    * Button variants Possible values are `"default"`, `"dashed"`. Defaults to `"default"`.
+    */
+    'variant': 'default' | 'dashed';
   }
 }
 
@@ -58,10 +66,17 @@ declare namespace LocalJSX {
     */
     'disabled'?: boolean;
     /**
+    * If true, the form will be in inline format. Defaults to `false`.
+    */
+    'inline'?: boolean;
+    /**
     * The input field label.
     */
     'label'?: string;
-    'onInputChanged'?: (event: CustomEvent<any>) => void;
+    /**
+    * On change of input a CustomEvent 'inputChange' will be triggered. Event details contains parent event, oldValue, newValue of input.
+    */
+    'onInputChange'?: (event: CustomEvent<any>) => void;
     /**
     * The input field placeholder.
     */
@@ -71,13 +86,17 @@ declare namespace LocalJSX {
     */
     'size'?: 'sm' | 'md' | 'lg';
     /**
-    * Button variants Possible values are `"text"`, `"email"`. Defaults to `"text"`.
+    * Button variants Possible values are `"text"`. Defaults to `"text"`.
     */
-    'type'?: 'text' | 'email';
+    'type'?: 'text';
     /**
     * The input field value.
     */
     'value'?: string;
+    /**
+    * Button variants Possible values are `"default"`, `"dashed"`. Defaults to `"default"`.
+    */
+    'variant'?: 'default' | 'dashed';
   }
 
   interface IntrinsicElements {

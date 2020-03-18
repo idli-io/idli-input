@@ -29,16 +29,39 @@ export class IdliInput {
 
     /**
      * Button variants
-     * Possible values are `"text"`, `"email"`. Defaults to `"text"`.
+     * Possible values are `"default"`, `"dashed"`. Defaults to `"default"`.
      */
-    @Prop() type: 'text' | 'email' = 'text';
+    @Prop() variant: 'default' | 'dashed' = 'default';
+
+    /**
+     * If true, the form will be in inline format. Defaults to `false`.
+     */
+    @Prop() inline: boolean = false;
+
+    /**
+     * Button variants
+     * Possible values are `"text"`. Defaults to `"text"`.
+     */
+    @Prop() type: 'text' = 'text';
 
     /**
      * If true, the user cannot interact with the button. Defaults to `false`.
      */
     @Prop() disabled: boolean = false;
 
-    @Event() inputChanged: EventEmitter;
+    /**
+     * On change of input a CustomEvent 'inputChange' will be triggered. Event details contains parent event, oldValue, newValue of input.
+     */
+    @Event() inputChange: EventEmitter;
+
+    getVariantClass() {
+        let variant = "variant-";
+        if (!this.variant)
+            variant = variant + 'default';
+        else
+            variant = variant + this.variant;
+        return variant;
+    }
 
     getSizeClass() {
         let size = "size-";
@@ -58,22 +81,39 @@ export class IdliInput {
         return type;
     }
 
-    handleChange(event: any) {
-        this.value = event.target.value;
-        this.inputChanged.emit(event);
+    getInlineClass() {
+        let inline = "";
+        if (this.inline)
+            inline =  'inline';
+        return inline;
+    }
+
+    handleInputChange(event: any) {
+        if (!this.disabled) {
+            const oldValue = this.value;
+            this.value = event.target.value;
+            this.inputChange.emit({event, oldValue, newValue: this.value});
+        }
+    }
+
+    getLabelElement() {
+        return  <label>{this.label}</label>;
+    }
+
+    private getInputElement() {
+        return <input
+            class="idli-input-element"
+            type={this.type}
+            placeholder={this.placeholder}
+            value={this.value}
+            onInput={(event) => this.handleInputChange(event)}
+            disabled={this.disabled}>
+        </input>
     }
 
     render() {
-        return <div class="idli-input-component">
-            <label>{this.label}</label>
-            <input
-                class={"idli-input-element " + this.getSizeClass() + " " + this.getTypeClass()}
-                type={this.type}
-                placeholder={this.placeholder}
-                value={this.value}
-                onInput={(event) => this.handleChange(event)}
-                disabled={this.disabled}>
-            </input>
+        return <div class={"idli-input-component  " + this.getInlineClass() + " "  + this.getVariantClass() + " " + this.getSizeClass() + " " + this.getTypeClass()}>
+            {[this.getLabelElement(), this.getInputElement()]}
         </div>;
     }
 }
