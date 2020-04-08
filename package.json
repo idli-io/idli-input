@@ -1,6 +1,6 @@
 {
   "name": "@idli/idli-input",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Idli Input",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -43,5 +43,5 @@
   "bugs": {
     "url": "https://github.com/idli-io/idli-input/issues"
   },
-  "homepage": "https://idli.io/input.html"
+  "homepage": "https://idli.io/component/input.html"
 }
