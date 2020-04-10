@@ -3,7 +3,7 @@
 ## Using this component
 
 ### Script tag
-- Put a script tag similar to this `<script src='https://unpkg.com/@idli/idli-input@0.2.0/dist/idli-input.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script src='https://unpkg.com/@idli/idli-input@0.2.2/dist/idli-input.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
@@ -23,7 +23,7 @@
 ```
 <custom-element-demo>
   <template>
-    <script src='https://unpkg.com/@idli/idli-input@0.2.0/dist/idli-input.js'></script>
+    <script src='https://unpkg.com/@idli/idli-input@0.2.2/dist/idli-input.js'></script>
     <idli-input label="Name" placeholder="John Snow"></idli-input>
     <idli-input size="lg" inline label="Size Large" value="Rahul"></idli-input>
     <idli-input size="md" label="Disabled" value="Visakhapatnam" disabled></idli-input>
@@ -38,7 +38,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
-  <script src='https://unpkg.com/@idli/idli-input@0.2.0/dist/idli-input.js'></script>
+  <script src='https://unpkg.com/@idli/idli-input@0.2.2/dist/idli-input.js'></script>
 </head>
 <body>
   <idli-input label="Name" placeholder="John Snow"></idli-input>
@@ -49,7 +49,7 @@
 ```
 
 #### Demo:
-[Click here for demo](http://idli.io/input.html)
+[Click here for demo](http://idli.io/component/input.html)
 
 ## Code of Conduct
 [Contributor Covenant](/CODE_OF_CONDUCT.md)
