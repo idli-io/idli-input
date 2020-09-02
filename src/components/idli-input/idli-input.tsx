@@ -50,10 +50,25 @@ export class IdliInput {
     @Prop() disabled: boolean = false;
 
     /**
+     * If true, required icon is show. Defaults to `false`.
+     */
+    @Prop() required: boolean = false;
+
+    /**
      * On change of input a CustomEvent 'inputChange' will be triggered. Event details contains parent event, oldValue, newValue of input.
      */
     @Event() inputChange: EventEmitter;
 
+    getCssClasses() {
+        const cls = [];
+        cls.push(this.getVariantClass());
+        cls.push(this.getSizeClass());
+        cls.push(this.getInlineClass());
+        cls.push(this.getTypeClass());
+        if (this.required)
+            cls.push("required");
+        return cls.join(" ");
+    }
     getVariantClass() {
         let variant = "variant-";
         if (!this.variant)
@@ -106,13 +121,14 @@ export class IdliInput {
             type={this.type}
             placeholder={this.placeholder}
             value={this.value}
+            required={this.required}
             onInput={(event) => this.handleInputChange(event)}
             disabled={this.disabled}>
         </input>
     }
 
     render() {
-        return <div class={"idli-input-component  " + this.getInlineClass() + " "  + this.getVariantClass() + " " + this.getSizeClass() + " " + this.getTypeClass()}>
+        return <div class={"idli-input-component  " + this.getCssClasses()}>
             {[this.getLabelElement(), this.getInputElement()]}
         </div>;
     }

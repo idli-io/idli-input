@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'idli-input',
+  buildEs5: false,
   outputTargets: [
     {
       type: 'dist',

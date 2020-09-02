@@ -28,6 +28,10 @@ export namespace Components {
     */
     'placeholder': string;
     /**
+    * If true, required icon is show. Defaults to `false`.
+    */
+    'required': boolean;
+    /**
     * The button size. Possible values are: `"sm"`, `"md"`, `"lg"`. Defaults to `"md"`.
     */
     'size': 'sm' | 'md' | 'lg';
@@ -81,6 +85,10 @@ declare namespace LocalJSX {
     * The input field placeholder.
     */
     'placeholder'?: string;
+    /**
+    * If true, required icon is show. Defaults to `false`.
+    */
+    'required'?: boolean;
     /**
     * The button size. Possible values are: `"sm"`, `"md"`, `"lg"`. Defaults to `"md"`.
     */
